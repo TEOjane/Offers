@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:Offers.ViewModels" x:DataType="viewmodels:TestServices" xmlns:models ="clr-namespace:Offers.Model"
+             x:Class="Offers.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="DarkCyan" Padding="24" CornerRadius="0">
+            <Label Text="ID заказов" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+
+        <ListView  HasUnevenRows="True" x:Name="ListViewOffers" ItemsSource="{Binding OffersList}" ItemTapped="OnItemSelected">
+
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="models:TestModel">
+                    <ViewCell>
+                        <StackLayout>
+                            <Label x:Name="buttonID" Text="{Binding ID, Mode=OneWay}" BackgroundColor="White" TextColor="DarkCyan"  Margin="30,3,30,3" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="25">
+                            </Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+
+</ContentPage>
+    
+    
+    
+
